@@ -16,6 +16,7 @@ public:
   virtual void draw();
   void load_data();
 private:
+  sf::Sprite background;
   std::thread loading_thread;
 };
 

@@ -5,6 +5,7 @@
 #include <SFML/Graphics.hpp>
 #include "../Managers/ScreenManager.hpp"
 #include "AbstractScreen.hpp"
+#include "../Managers/ResourceManager.hpp"
 
 class MenuScreen : public AbstractScreen
 {
@@ -13,8 +14,8 @@ public:
   ~MenuScreen();
   virtual void update(sf::Time);
   virtual void draw();
-  void load_data();
 private:
+  sf::Sprite background;
 };
 
 #endif

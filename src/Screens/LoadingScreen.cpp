@@ -2,13 +2,15 @@
 
 LoadingScreen::LoadingScreen(ScreenManager* man) : AbstractScreen(man)
 {
-  //todo::load background pic & play music
+  //todo::& play music
+  background.setTexture(*ResourceManager::GetTexture("data/textures/loading/backgroun.png"));
+  background.setPosition(sf::Vector2f(0,0));
   loading_thread = std::thread(&LoadingScreen::load_data, this);
 }
 
 LoadingScreen::~LoadingScreen()
 {
-
+  delete &background;
 }
 
 void LoadingScreen::update(sf::Time)
@@ -22,7 +24,7 @@ void LoadingScreen::update(sf::Time)
 
 void LoadingScreen::draw()
 {
-  //todo :: draw background
+  manager->getWindow()->draw(background);
 }
 
 void LoadingScreen::load_data()
