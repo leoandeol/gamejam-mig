@@ -6,6 +6,7 @@
 #include "../Managers/ScreenManager.hpp"
 #include "AbstractScreen.hpp"
 #include "../Managers/ResourceManager.hpp"
+#include "../GUI/Button.hpp"
 
 class MenuScreen : public AbstractScreen
 {
@@ -16,6 +17,7 @@ public:
   virtual void draw();
 private:
   sf::Sprite background;
+  Button play,tutorial,score,options,credits,exit;
 };
 
 #endif

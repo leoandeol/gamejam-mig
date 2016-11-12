@@ -30,7 +30,7 @@ void LoadingScreen::update(sf::Time)
   if(loading_thread.joinable())
     {
       loading_thread.join();
-      //manager->push_screen(new MenuScreen(manager));
+      manager->push_screen(new MenuScreen(manager));
     }
 }
 
