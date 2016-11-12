@@ -14,6 +14,7 @@ public:
   virtual void draw()=0;
 protected:
   ScreenManager* manager;
+  sf::RenderWindow* window;
 };
 
 #endif

@@ -4,7 +4,7 @@ MenuScreen::MenuScreen(ScreenManager* man) : AbstractScreen(man), play("Jouer",s
 {
   background.setTexture(*ResourceManager::GetTexture("data/textures/menu/background.png"));
   background.setPosition(sf::Vector2f(0,0));
-  std::cout << background.getTexture()->getSize().x << ";" << background.getTexture()->getSize().y << std::endl;
+  window = man->getWindow();
 }
 
 MenuScreen::~MenuScreen()
@@ -14,7 +14,19 @@ MenuScreen::~MenuScreen()
 
 void MenuScreen::update(sf::Time delta)
 {
-
+  sf::Event event;
+  while(window->pollEvent(event))
+    {
+      if(event.type==sf::Event::MouseButtonPressed&&event.mouseButton.button==sf::Mouse::Left)
+	{
+	  
+	}
+      if(event.type==sf::Event::JoystickButtonPressed||event.type==sf::Event::JoystickMoved)
+	{
+	  std::cout << "YOU WIN" << event.joystickButton.button << std::endl;
+	  std::cout << "new position: " << event.joystickMove.position << std::endl;
+	}
+    }
 }
 
 void MenuScreen::draw()
