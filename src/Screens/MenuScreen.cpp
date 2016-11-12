@@ -19,7 +19,32 @@ void MenuScreen::update(sf::Time delta)
     {
       if(event.type==sf::Event::MouseButtonPressed&&event.mouseButton.button==sf::Mouse::Left)
 	{
-	  
+	  sf::Vector2i mous = sf::Mouse::getPosition();
+	  if(play.contains(mous))
+	    {
+	      std::cout << "Play" << std::endl;
+	      manager->push_screen(new GameScreen(manager));
+	    }
+	  else if (tutorial.contains(mous))
+	    {
+	      std::cout << "Tutorial" << std::endl;
+	    }
+	  else if (score.contains(mous))
+	    {
+	      std::cout << "Score" << std::endl;
+	    }
+	  else if (options.contains(mous))
+	    {
+	      std::cout << "Options" << std::endl;
+	    }
+	  else if (credits.contains(mous))
+	    {
+	      std::cout << "Credits" << std::endl;
+	    }
+	  else if (exit.contains(mous))
+	    {
+	      window->close();
+	    }
 	}
       if(event.type==sf::Event::JoystickButtonPressed||event.type==sf::Event::JoystickMoved)
 	{

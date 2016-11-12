@@ -7,6 +7,7 @@
 #include "AbstractScreen.hpp"
 #include "../Managers/ResourceManager.hpp"
 #include "../GUI/Button.hpp"
+#include "GameScreen.hpp"
 
 class MenuScreen : public AbstractScreen
 {

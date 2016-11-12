@@ -16,6 +16,11 @@ Button::~Button()
   
 }
 
+bool Button::contains(sf::Vector2i v)
+{
+  return hitbox.contains(v);
+}
+
 sf::IntRect Button::getHitbox()
 {
   return hitbox;

@@ -10,6 +10,7 @@ class Button
 public:
   Button(std::string,sf::IntRect);
   ~Button();
+  bool contains(sf::Vector2i);
   sf::IntRect getHitbox();
   void draw(sf::RenderWindow*);
 private:
