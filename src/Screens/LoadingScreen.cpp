@@ -1,9 +1,9 @@
 #include "LoadingScreen.hpp"
 
-LoadingScreen::LoadingScreen()
+LoadingScreen::LoadingScreen(ScreenManager* man) : AbstractScreen(man)
 {
   //todo::load background pic & play music
-  loading_thread(&LoadingScreen::load_data(), this);
+  loading_thread = std::thread(&LoadingScreen::load_data, this);
 }
 
 LoadingScreen::~LoadingScreen()
@@ -13,14 +13,14 @@ LoadingScreen::~LoadingScreen()
 
 void LoadingScreen::update(sf::Time)
 {
-  if(loading_tread.joinable())
+  if(loading_thread.joinable())
     {
-      t.join();
-      manager->push_screen(new MenuScreen());
+      loading_thread.join();
+      manager->push_screen(new MenuScreen(manager));
     }
 }
 
-void LoadingScreen::draw(sf::RenderWindow* window);
+void LoadingScreen::draw()
 {
   //todo :: draw background
 }

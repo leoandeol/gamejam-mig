@@ -10,6 +10,7 @@ class ScreenManager
 public:
   ScreenManager(sf::RenderWindow*);
   ~ScreenManager();
+  sf::RenderWindow* getWindow();
   void update(sf::Time);
   void draw();
   void push_screen(AbstractScreen*);

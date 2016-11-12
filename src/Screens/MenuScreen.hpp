@@ -1,22 +1,20 @@
-#ifndef LOADINGSCREEN_HPP
-#define LOADINGSCREEN_HPP
+#ifndef MENUSCREEN_HPP
+#define MENUSCREEN_HPP
 
 #include <thread>
 #include <SFML/Graphics.hpp>
 #include "../Managers/ScreenManager.hpp"
 #include "AbstractScreen.hpp"
-#include "MenuScreen.hpp"
 
-class LoadingScreen : public AbstractScreen
+class MenuScreen : public AbstractScreen
 {
 public:
-  LoadingScreen(ScreenManager*);
-  ~LoadingScreen();
+  MenuScreen(ScreenManager*);
+  ~MenuScreen();
   virtual void update(sf::Time);
   virtual void draw();
   void load_data();
 private:
-  std::thread loading_thread;
 };
 
 #endif

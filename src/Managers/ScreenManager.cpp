@@ -10,6 +10,11 @@ ScreenManager::~ScreenManager()
 
 }
 
+sf::RenderWindow* ScreenManager::getWindow()
+{
+  return window;
+}
+
 void ScreenManager::update(sf::Time delta)
 {
   screens.top()->update(delta);
@@ -17,7 +22,7 @@ void ScreenManager::update(sf::Time delta)
 
 void ScreenManager::draw()
 {
-  screens.top()->draw(window);
+  screens.top()->draw();
 }
 
 void ScreenManager::push_screen(AbstractScreen* s)
