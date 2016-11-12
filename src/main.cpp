@@ -2,13 +2,15 @@
 #include <ctime>
 #include <SFML/Graphics.hpp>
 #include "Managers/ScreenManager.hpp"
+#include "Screens/LoadingScreen.hpp"
 
 int main()
 {
   srand(time(NULL)); // Setting random seed
-  sf::RenderWindow window(sf::VideoMode(1280, 720), "A type pursuer", sf::Style::Fullscreen);
-  sf::CircleShape shape(100.f);
-  shape.setFillColor(sf::Color::Green);
+  sf::RenderWindow window(sf::VideoMode(1280, 720, 32), "A type pursuer");
+  ScreenManager sc(&window);
+  sc.push_screen(new LoadingScreen(&sc));
+  sf::Clock delta;
   
   while (window.isOpen())
     {
@@ -20,7 +22,8 @@ int main()
         }
       
       window.clear();
-      window.draw(shape);
+      sc.update(delta.restart());
+      sc.draw();
       window.display();
     }
   

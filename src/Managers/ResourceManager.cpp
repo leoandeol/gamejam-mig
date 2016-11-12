@@ -10,7 +10,10 @@ sf::Texture* ResourceManager::GetTexture(std::string path)
   if (textures.find(path) == textures.end())
     {
       sf::Texture* texture = new sf::Texture();
-      texture->loadFromFile(path);
+      if(!texture->loadFromFile(path))
+	{
+	  std::cerr << "Error loading file : " << path << std::endl;
+	}
       textures[path] = texture;
     }
   return textures[path];
@@ -21,7 +24,10 @@ sf::Font* ResourceManager::GetFont(std::string path)
   if (fonts.find(path) == fonts.end())
     {
       sf::Font* font = new sf::Font();
-      font->loadFromFile(path);
+      if(!font->loadFromFile(path))
+	{
+	  std::cerr << "Error loading file : " << path << std::endl;
+	}
       fonts[path] = font;
     }
   return fonts[path];
@@ -32,7 +38,10 @@ sf::SoundBuffer* ResourceManager::GetSoundBuffer(std::string path)
   if (sounds.find(path) == sounds.end())
     {
       sf::SoundBuffer* sound = new sf::SoundBuffer();
-      sound->loadFromFile(path);
+      if(!sound->loadFromFile(path))
+	{
+	  std::cerr << "Error loading file : " << path << std::endl;
+	}
       sounds[path] = sound;
     }
   return sounds[path];
@@ -43,7 +52,10 @@ sf::Music* ResourceManager::GetMusic(std::string path)
   if (musics.find(path) == musics.end())
     {
       sf::Music* music = new sf::Music();
-      music->openFromFile(path);
+      if(!music->openFromFile(path))
+	{
+	  std::cerr << "Error loading file : " << path << std::endl;
+	}
       musics[path] = music;
     }
   return musics[path];

@@ -1,6 +1,7 @@
 #ifndef RESOURCEMANAGER_HPP
 #define RESOURCEMANAGER_HPP
 
+#include <iostream>
 #include <string>
 #include <unordered_map>
 #include <SFML/Graphics.hpp>
