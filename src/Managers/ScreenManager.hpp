@@ -8,15 +8,15 @@
 class ScreenManager
 {
 public:
-  ScreenManager(sf::RenderWindow&);
+  ScreenManager(sf::RenderWindow*);
   ~ScreenManager();
   void update(sf::Time);
   void draw();
-  void push_screen(AbstractScreen);
-  AbstractScreen pop();
+  void push_screen(AbstractScreen*);
+  void pop_screen();
 private:
-  std::stack<AbstractScreen> screens;
-  sf::Renderwindow* window;
+  std::stack<AbstractScreen*> screens;
+  sf::RenderWindow* window;
 };
 
 #endif
