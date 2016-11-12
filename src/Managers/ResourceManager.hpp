@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include <unordered_map>
+#include <map>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
@@ -15,10 +15,10 @@ public:
   static sf::SoundBuffer* GetSoundBuffer(std::string);
   static sf::Music* GetMusic(std::string);
 private:
-  static std::unordered_map<std::string, sf::Texture*> textures;
-  static std::unordered_map<std::string, sf::Font*> fonts;
-  static std::unordered_map<std::string, sf::SoundBuffer*> sounds;
-  static std::unordered_map<std::string, sf::Music*> musics;
+  static std::map<std::string, sf::Texture*> textures;
+  static std::map<std::string, sf::Font*> fonts;
+  static std::map<std::string, sf::SoundBuffer*> sounds;
+  static std::map<std::string, sf::Music*> musics;
 };
 
 #endif
