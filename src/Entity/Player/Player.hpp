@@ -1,20 +1,26 @@
 #ifndef DEF_PLAYER
 #define DEF_PLAYER
+#include <string>
 #include <vector>
-#include "Entity.hpp"
+#include "Child.hpp"
+#include "../MovingEntity.hpp"
 
 
-class Player : Entity
+class Player : public MovingEntity
 {
 
 public:
   Player();
-  void scareWolves();
-  void callRats();
+  ~Player();
+  void wolfFlute();
+  //void bomb();
   void enchantChildren();
+  void getAttacked();
+  void loseChild();
+  void toString();
 
 private:
-  std::vector<Child> child;
+  std::vector<Child*> child;
 };
 
 

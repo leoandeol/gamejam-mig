@@ -1,22 +1,19 @@
 #ifndef DEF_CHILD
 #define DEF_CHILD
-#include <string>
-#include "Entity.h"
+#include "../MovingEntity.hpp"
 #include <cstdlib>
 
-class Child : Entity
+class Child : public MovingEntity
 {
 
 public:
-  Child(string);
-  void accelerate();
-  void slowDown();
-  
+  Child();
+  void setEnchanted();
+ 
 private:
-  std::string c_name;
   double c_moveSpeed;
   bool c_sex;
   bool c_enchanted;
-}
+};
 
 #endif

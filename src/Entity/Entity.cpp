@@ -13,16 +13,3 @@ Entity::~Entity()
   delete this.e_coord;
 }
 
-void Entity::moveUp()
-{
-  if(this.lane < 3){
-    this.lane++;
-  }
-}
-
-void Entity::moveDown()
-{
-  if(this.lane > 1){
-    this.lane--;
-  }
-}

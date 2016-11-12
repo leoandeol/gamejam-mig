@@ -1,7 +1,8 @@
 #ifndef DEF_WOLF
 #define DEF_WOLF
+#include "Enemy.hpp"
 
-class Wolf : Enemy
+class Wolf : public Enemy
 {
   
 public :
@@ -9,7 +10,7 @@ public :
   
 private :
   
-}
+};
 
 
 #endif

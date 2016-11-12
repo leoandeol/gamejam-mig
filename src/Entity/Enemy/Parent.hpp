@@ -8,6 +8,7 @@ class Parent : Enemy
 
 public:
   Parent();
+  void attack();
   
 private:
   int p_sex;

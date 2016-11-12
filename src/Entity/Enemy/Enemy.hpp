@@ -1,13 +1,14 @@
 #ifndef DEF_ENEMY
 #define DEF_ENEMY
 
-#include "Entity.hpp"
+#include "../MovingEntity.hpp"
 
-class Enemy : public Entity
+class Enemy : public MovingEntity
 {
   
 public:
-  void Attack();
+  void attack();
+  void run();
   
 private:
   int hp;
