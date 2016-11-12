@@ -2,7 +2,7 @@ CC = g++
 LINK_FLAGS = -lsfml-graphics -lsfml-window -lsfml-audio -lsfml-system;
 CC_FLAGS = -Wall -Wextra -O3
 EXEC = bin/main
-SOURCES=$(wildcard src/*.cpp)
+SOURCES=$(wildcard src/*.cpp src/*/*.cpp)
 OBJECTS=$(SOURCES:.cpp=.o)
 
 default: all clean
