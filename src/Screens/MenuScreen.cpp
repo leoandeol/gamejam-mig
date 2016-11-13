@@ -8,12 +8,12 @@ MenuScreen::MenuScreen(ScreenManager* man) : AbstractScreen(man)
   //manager->push_screen(new GameScreen(manager));
 
 
-  const std::string s[3] = { "Jouer", "Options", "Quitter" };
-  strings.push_back("Jouer");
-  strings.push_back("Options");
-  strings.push_back("Quitter");
+  std::vector<std::string> s;
+  s.push_back("Jouer");
+  s.push_back("Options");
+  s.push_back("Quitter");
   
-  menu = new Menu(strings);
+  menu = new Menu(s);
 }
 
 MenuScreen::~MenuScreen()

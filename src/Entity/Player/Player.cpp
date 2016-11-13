@@ -24,9 +24,9 @@ void Player::bomb(){
   wolfFlute();
 }
 
-void Player::enchantChildren(Child enfant)
+void Player::enchantChildren(Child* enfant)
 {
-  enfant.setEnchant(true);
+  enfant->setEnchant(true);
 }
 
 void Player::loseChild()
@@ -43,6 +43,12 @@ int Player::update(sf::Time delta)
 {
   return 0;
 }
+
+void Player::receiveNew(Child* enfant)
+{
+  newEnfant = enfant;
+}
+
 
 void Player::joueNote(Note newNote)
 {
@@ -65,7 +71,7 @@ void Player::joueNote(Note newNote)
     }
   else if(newNote.getA() == 4 && newNote.getB() == 2 && newNote.getC() == 3)
     {
-      enchantChildren(gs->getChild());
+      enchantChildren(newEnfant);
     }
   else if(newNote.getA() == 2 && newNote.getB() == 4 && newNote.getC() == 3)
     {

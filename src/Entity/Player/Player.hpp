@@ -15,16 +15,18 @@ public:
   ~Player();
   void wolfFlute();
   void bomb();
-  void enchantChildren(Child);
+  void enchantChildren(Child*);
   void getAttacked();
   void loseChild();
   void joueNote(Note);
+  void receiveNew(Child*);
   int update(sf::Time delta);
 
 private:
   std::vector<Child*> child;
   GameScreen* gs;
   int nbNoteSup;
+  Child* newEnfant;
 };
 
 
