@@ -18,7 +18,7 @@ public:
 
 private:
   double moveSpeed;
-  Animation anim;
+  Animation* anim;
 
 };
 
