@@ -26,6 +26,7 @@ private:
   std::vector<Wolf*> wolves;
   std::vector<Parent*> parents;
   Parallax para;
+  sf::Sprite *fp1,*fp2,*aft_lan_1,*aft_lan_2,*aft_lan_3,*road;
 };
 
 #endif
