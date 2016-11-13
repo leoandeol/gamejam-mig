@@ -16,10 +16,11 @@ void MenuScreen::update(sf::Time delta)
 {
   sf::Event event;
   while(window->pollEvent(event))
-    {
+    {sf::Vector2i mous = sf::Mouse::getPosition(*window);
+	  std::cout << mous.x << ";" << mous.y << std::endl;
       if(event.type==sf::Event::MouseButtonPressed&&event.mouseButton.button==sf::Mouse::Left)
 	{
-	  sf::Vector2i mous = sf::Mouse::getPosition();
+	  
 	  if(play.contains(mous))
 	    {
 	      std::cout << "Play" << std::endl;

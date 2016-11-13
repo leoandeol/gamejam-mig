@@ -1,6 +1,7 @@
 #ifndef BUTTON_HPP
 #define BUTTON_HPP
 
+#include <iostream>
 #include <string>
 #include <SFML/Graphics.hpp>
 #include "../Managers/ResourceManager.hpp"
