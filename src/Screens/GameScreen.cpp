@@ -2,8 +2,21 @@
 
 GameScreen::GameScreen(ScreenManager* m) : AbstractScreen(m), para(m->getRes())
 {
+  ResourceManager* r = m->getRes();
   window = manager->getWindow();
   player = new Player(2,this);
+  fp1 = new sf::Sprite();
+  fp2 = new sf::Sprite();
+  aft_lan_1 = new sf::Sprite();
+  aft_lan_2 = new sf::Sprite();
+  aft_lan_3 = new sf::Sprite();
+  road = new sf::Sprite();
+  fp1->setTexture(*r->GetTexture("data/textures/game/background/fp1.png"));
+  fp2->setTexture(*r->GetTexture("data/textures/game/background/fp2.png"));
+  aft_lan_1->setTexture(*r->GetTexture("data/textures/game/background/aft_lan_1.png"));
+  aft_lan_2->setTexture(*r->GetTexture("data/textures/game/background/aft_lan_2.png"));
+  aft_lan_3->setTexture(*r->GetTexture("data/textures/game/background/aft_lan_3.png"));
+  road->setTexture(*r->GetTexture("data/textures/game/background/7.png"));
 }
 
 GameScreen::~GameScreen()
@@ -12,7 +25,8 @@ GameScreen::~GameScreen()
 }
 
 void GameScreen::update(sf::Time delta)
-{sf::Event event;
+{
+  sf::Event event;
   while(window->pollEvent(event))
     {
       if (event.type == sf::Event::Closed||(event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape))
@@ -49,6 +63,7 @@ void GameScreen::draw()
 {
   para.draw(window);
   player->draw(window);
+  w->draw(*road);
   for(int i = 0; i < wolves.size(); i++)
     {
       wolves[i]->draw(window);
@@ -57,6 +72,8 @@ void GameScreen::draw()
     {
       parents[i]->draw(window);
     }
+  w->draw(*fp2);
+  w->draw(*fp1);
 }
 
 void GameScreen::wolfRun()
