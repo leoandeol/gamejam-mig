@@ -8,6 +8,7 @@ class Entity{
 public:
   Entity(int, ResourceManager*); 
   ~Entity();
+  int getLane();
   virtual int update(sf::Time)=0;
   virtual void draw(sf::RenderWindow*)=0;
   

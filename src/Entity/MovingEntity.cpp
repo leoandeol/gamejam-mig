@@ -29,8 +29,8 @@ void MovingEntity::moveDown()
   }
 }
 
-void MovingEntity::MovingEntity()
+void MovingEntity::draw(sf::RenderWindow* w)
 {
-  w->draw(anim*);
+  anim->draw(w);
 }
 

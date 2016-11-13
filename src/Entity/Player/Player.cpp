@@ -3,14 +3,9 @@
 Player::Player(int lane, GameScreen* gsi,ResourceManager* res) : MovingEntity(lane,res)
 {
   for(int i = 0; i < 4 ;i++){
-    child.push_back(new Child(lane));
-<<<<<<< HEAD
+    child.push_back(new Child(lane, res));
   }
-  anim = new Animation(res->GetTexture("data/textures/game/player.png"),11,1,sf::Vector2f(0,0),sf::milliseconds(1500));
-=======
-    }*/
   anim = new Animation(res->getTexture("data/textures/game/player.png"),11,1,sf::Vector2f(0,0),sf::milliseconds(1500));
->>>>>>> 5a00e709861940311185c321ef1a1723f37cd355
   gs = gsi;
   nbNoteSup = 0;
 }

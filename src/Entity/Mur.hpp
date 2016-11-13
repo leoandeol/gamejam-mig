@@ -7,7 +7,6 @@ class Mur : public nonMovingEntity
 {  
 public:
   int update(sf::Time);
-  void draw(sf::RenderWindow*);
 };
-  
+
 #endif
