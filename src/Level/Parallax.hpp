@@ -13,12 +13,12 @@ public:
   void draw(sf::RenderWindow*);
 private:
   sf::Sprite *a1,*a2,*b1,*b2,*c1,*c2,*d1,*d2,*e1,*e2,*f1,*f2;
-  const double a_speed = 0.2;
-  const double b_speed = 0.4;
-  const double c_speed = 0.6;
-  const double d_speed = 0.8;
-  const double e_speed = 1.0;
-  const double f_speed = 1.2;
+  const double a_speed = 0.02;
+  const double b_speed = 0.04;
+  const double c_speed = 0.06;
+  const double d_speed = 0.08;
+  const double e_speed = 0.10;
+  const double f_speed = 0.12;
 };
 
 #endif

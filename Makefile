@@ -1,6 +1,6 @@
 CC = g++
 LINK_FLAGS = -lpthread -lsfml-graphics -lsfml-window -lsfml-audio -lsfml-system;
-CC_FLAGS = -std=c++11 -Wall -Wextra -O3 -flto -Wodr
+CC_FLAGS = -std=c++11 -Wall -Wextra
 EXEC = bin/main
 SOURCES=$(wildcard src/*.cpp src/*/*.cpp src/*/*/*.cpp)
 OBJECTS=$(SOURCES:.cpp=.o)

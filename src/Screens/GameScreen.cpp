@@ -1,7 +1,12 @@
 #include "GameScreen.hpp"
 
-GameScreen::GameScreen(ScreenManager* m) : AbstractScreen(m), para(m->getRes())
+GameScreen::GameScreen(ScreenManager* m) : AbstractScreen(m), para(m->getRes()) 
 {
+  entities_to_draw_by_lane = new std::vector<MovingEntity*>[3];
+  for(int i = 0; i < 3; i++)
+    {
+      entities_to_draw_by_lane[i] = std::vector<MovingEntity*>();
+    }
   ResourceManager* r = m->getRes();
   window = manager->getWindow();
   player = new Player(2,this,r);
@@ -11,12 +16,12 @@ GameScreen::GameScreen(ScreenManager* m) : AbstractScreen(m), para(m->getRes())
   aft_lan_2 = new sf::Sprite();
   aft_lan_3 = new sf::Sprite();
   road = new sf::Sprite();
-  fp1->setTexture(*r->GetTexture("data/textures/game/background/fp1.png"));
-  fp2->setTexture(*r->GetTexture("data/textures/game/background/fp2.png"));
-  aft_lan_1->setTexture(*r->GetTexture("data/textures/game/background/aft_lan_1.png"));
-  aft_lan_2->setTexture(*r->GetTexture("data/textures/game/background/aft_lan_2.png"));
-  aft_lan_3->setTexture(*r->GetTexture("data/textures/game/background/aft_lan_3.png"));
-  road->setTexture(*r->GetTexture("data/textures/game/background/7.png"));
+  fp1->setTexture(*r->getTexture("data/textures/game/background/fp1.png"));
+  fp2->setTexture(*r->getTexture("data/textures/game/background/fp2.png"));
+  aft_lan_1->setTexture(*r->getTexture("data/textures/game/background/aft_lan_1.png"));
+  aft_lan_2->setTexture(*r->getTexture("data/textures/game/background/aft_lan_2.png"));
+  aft_lan_3->setTexture(*r->getTexture("data/textures/game/background/aft_lan_3.png"));
+  road->setTexture(*r->getTexture("data/textures/game/background/7.png"));
 }
 
 GameScreen::~GameScreen()
@@ -57,21 +62,47 @@ void GameScreen::update(sf::Time delta)
     {
       parents[i]->update(delta);
     }
+
+
+  //sorting for draw
+  entities_to_draw_by_lane[0].clear();
+  entities_to_draw_by_lane[1].clear();
+  entities_to_draw_by_lane[2].clear();
+  int a = player->getLane();
+  entities_to_draw_by_lane[a].push_back(player);
+  
+  for(int i = 0; i < wolves.size(); i++)
+    {
+      a = wolves[i]->getLane();
+      entities_to_draw_by_lane[a].push_back(wolves[i]);
+    }
+  for(int i = 0; i < parents.size(); i++)
+    {
+      a = parents[i]->getLane();
+      entities_to_draw_by_lane[a].push_back(parents[i]);
+    }
 }
 
 void GameScreen::draw()
 {
   para.draw(window);
-  player->draw(window);
   window->draw(*road);
-  for(int i = 0; i < wolves.size(); i++)
+  window->draw(*aft_lan_3);
+  for(int i = 0; i < entities_to_draw_by_lane[2].size(); i++)
     {
-      wolves[i]->draw(window);
+      entities_to_draw_by_lane[2][i]->draw(window);
     }
-  for(int i = 0; i < parents.size(); i++)
+  window->draw(*aft_lan_2);
+  for(int i = 0; i < entities_to_draw_by_lane[1].size(); i++)
     {
-      parents[i]->draw(window);
+      entities_to_draw_by_lane[1][i]->draw(window);
     }
+  window->draw(*aft_lan_1);
+  for(int i = 0; i < entities_to_draw_by_lane[0].size(); i++)
+    {
+      entities_to_draw_by_lane[0][i]->draw(window);
+    }
+  player->draw(window);
   window->draw(*fp2);
   window->draw(*fp1);
 }

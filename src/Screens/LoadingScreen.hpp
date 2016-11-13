@@ -22,7 +22,7 @@ private:
   const int NB_ELEMENTS_TO_LOAD = 3;
   int nb_elements_loaded;
   double percent_loaded;
-  std::vector<char*> textures_to_load;
+  std::vector<std::string> textures_to_load;
 };
 
 #endif

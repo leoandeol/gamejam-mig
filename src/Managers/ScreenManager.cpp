@@ -1,8 +1,8 @@
 #include "ScreenManager.hpp"
 
-ScreenManager::ScreenManager(sf::RenderWindow* w) : window(w), res()
+ScreenManager::ScreenManager(sf::RenderWindow* w) : window(w)
 {
-  
+  res = new ResourceManager();
 }
 
 ScreenManager::~ScreenManager()
