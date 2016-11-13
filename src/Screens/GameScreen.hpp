@@ -5,10 +5,12 @@
 #include <SFML/Graphics.hpp>
 #include "../Managers/ScreenManager.hpp"
 #include "AbstractScreen.hpp"
-#include "../Entity/Player/Player.hpp"
 #include "../Entity/Enemy/Wolf.hpp"
 #include "../Entity/Enemy/Parent.hpp"
 #include "../Level/Parallax.hpp"
+#include "../Entity/Player/Player.hpp"
+
+class Player;
 
 class GameScreen : public AbstractScreen
 {

@@ -9,9 +9,9 @@ MenuScreen::MenuScreen(ScreenManager* man) : AbstractScreen(man)
 
 
   std::vector<std::string> s;
-  s.push_back("Jouer");
-  s.push_back("Options");
-  s.push_back("Quitter");
+  s.push_back(std::string("Jouer"));
+  s.push_back(std::string("Options"));
+  s.push_back(std::string("Quitter"));
   
   menu = new Menu(s);
 }

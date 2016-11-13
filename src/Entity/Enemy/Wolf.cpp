@@ -2,8 +2,8 @@
 
 void Wolf::attack()
 {
-  player.getAttacked();
-  run()
+  //player.getAttacked();
+  run();
 }
 
 void Wolf::run()
