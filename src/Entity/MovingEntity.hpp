@@ -3,12 +3,13 @@
 #include <SFML/Graphics.hpp>
 #include "Animation.hpp"
 #include "Entity.hpp"
+#include "../Managers/ResourceManager.hpp"
 
 class MovingEntity : public Entity
 {
 
 public:
-  MovingEntity(int);
+  MovingEntity(int, ResourceManager*);
   void acceleration();
   void slowDown();
   void moveUp();
@@ -16,6 +17,7 @@ public:
 
 private:
   double moveSpeed;
+  Animation anim;
 
 };
 

@@ -8,7 +8,6 @@ Entity::Entity(int l)
 
 Entity::~Entity()
 {
-  delete anim;
 }
 
 void Entity::draw(sf::RenderWindow* w)

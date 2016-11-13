@@ -11,7 +11,7 @@ Player::Player(int lane, GameScreen* gsi) : MovingEntity(lane)
 
 Player::~Player()
 {
-  delete &child;
+
 }
 
 void Player::wolfFlute()

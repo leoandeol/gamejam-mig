@@ -1,7 +1,6 @@
-#ifndef DEF_ENTITY
+1#ifndef DEF_ENTITY
 #define DEF_ENTITY
 #include <SFML/Graphics.hpp>
-#include "Animation.hpp"
 
 class Entity{
 
@@ -12,7 +11,6 @@ public:
   void draw(sf::RenderWindow*);
   
 protected:
-  Animation* anim;
   int lane;
   sf::Vector2f coord;
 
