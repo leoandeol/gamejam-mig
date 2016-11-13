@@ -1,6 +1,6 @@
 #include "Mur.hpp"
 
-int update(sf::time delta)
+int Mur::update(sf::time delta)
 {
   
 }
