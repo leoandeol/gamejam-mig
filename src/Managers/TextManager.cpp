@@ -1,8 +1,8 @@
 #include "TextManager.hpp"
 
-TextManager::read(std::string nomfichier)
+void TextManager::read(std::string nomfichier)
 {
-  ifstream fichier("test.txt", ios::in); 
+  /*ifstream fichier("test.txt", ios::in); 
   char car;
   if(fichier)
     {
@@ -31,5 +31,5 @@ TextManager::read(std::string nomfichier)
       fichier.close();  
     }
   else  
-    cerr << "Erreur ouverture fichier" << endl;
-}
+    cerr << "Erreur ouverture fichier" << endl;*/
+}		
