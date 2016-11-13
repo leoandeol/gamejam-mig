@@ -21,3 +21,8 @@ int Note;;getC()
 {
   return n_c;
 }
+
+float getVolume()
+{
+  return volume;
+}

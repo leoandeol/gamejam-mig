@@ -6,6 +6,7 @@ Player::Player(int lane, GameScreen* gsi) : MovingEntity(lane)
     child.push_back(new Child(lane));
   }
   gs = gsi;
+  nbNoteSup = 0;
 }
 
 Player::~Player()
@@ -18,15 +19,14 @@ void Player::wolfFlute()
   gs->wolfRun();
 }
 
-void Player::bomb()
-{
+void Player::bomb(){
   child.back()->kill();
   wolfFlute();
 }
 
-void Player::enchantChildren()
+void Player::enchantChildren(Child enfant)
 {
-  child.back()->setEnchanted();
+  enfant.setEnchant(true);
 }
 
 void Player::loseChild()
@@ -65,7 +65,7 @@ void Player::joueNote(Note newNote)
     }
   else if(newNote.getA() == 4 && newNote.getB() == 2 && newNote.getC() == 3)
     {
-      enchantChildren();
+      enchantChildren(gs->getChild());
     }
   else if(newNote.getA() == 2 && newNote.getB() == 4 && newNote.getC() == 3)
     {
@@ -74,5 +74,13 @@ void Player::joueNote(Note newNote)
   else if(newNote.getA() == 3 && newNote.getB() == 4 && newNote.getC() == 1)
     {
       wolfFlute();
+    }
+  if(newNote.getVolume() >= 0.5)
+    {
+      nbNoteSup++;
+    }
+  if(nbNoteSup >= 3)
+    {
+      child.back()->setEnchant(false);
     }
 }

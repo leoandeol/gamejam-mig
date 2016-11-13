@@ -8,6 +8,7 @@ public:
   int getA();
   int getB();
   int getC();
+  float getVolume();
 
 private:
   int n_a;
