@@ -27,7 +27,7 @@ private:
   std::vector<Parent*> parents;
   Parallax para;
   sf::Sprite *fp1,*fp2,*aft_lan_1,*aft_lan_2,*aft_lan_3,*road;
-  std::vector<MovingEntity>* entities_to_draw_by_lane;
+  std::vector<MovingEntity*>* entities_to_draw_by_lane;
 };
 
 #endif

@@ -2,10 +2,10 @@
 
 GameScreen::GameScreen(ScreenManager* m) : AbstractScreen(m), para(m->getRes()) 
 {
-  entities_to_draw_by_lane = new std::vector<MovingEntity>[3];
+  entities_to_draw_by_lane = new std::vector<MovingEntity*>[3];
   for(int i = 0; i < 3; i++)
     {
-      entities_to_draw_by_lane[i] = std::vector<MovingEntity>();
+      entities_to_draw_by_lane[i] = std::vector<MovingEntity*>();
     }
   ResourceManager* r = m->getRes();
   window = manager->getWindow();
@@ -62,6 +62,25 @@ void GameScreen::update(sf::Time delta)
     {
       parents[i]->update(delta);
     }
+
+
+  //sorting for draw
+  entities_to_draw_by_lane[0].clear();
+  entities_to_draw_by_lane[1].clear();
+  entities_to_draw_by_lane[2].clear();
+  int a = player->getLane();
+  entities_to_draw_by_lane[a].push_back(player);
+  
+  for(int i = 0; i < wolves.size(); i++)
+    {
+      a = wolves[i]->getLane();
+      entities_to_draw_by_lane[a].push_back(wolves[i]);
+    }
+  for(int i = 0; i < parents.size(); i++)
+    {
+      a = parents[i]->getLane();
+      entities_to_draw_by_lane[a].push_back(parents[i]);
+    }
 }
 
 void GameScreen::draw()
@@ -71,17 +90,17 @@ void GameScreen::draw()
   window->draw(*aft_lan_3);
   for(int i = 0; i < entities_to_draw_by_lane[2].size(); i++)
     {
-      entities_to_draw_by_lane[2][i].draw(window);
+      entities_to_draw_by_lane[2][i]->draw(window);
     }
   window->draw(*aft_lan_2);
   for(int i = 0; i < entities_to_draw_by_lane[1].size(); i++)
     {
-      entities_to_draw_by_lane[1][i].draw(window);
+      entities_to_draw_by_lane[1][i]->draw(window);
     }
   window->draw(*aft_lan_1);
   for(int i = 0; i < entities_to_draw_by_lane[0].size(); i++)
     {
-      entities_to_draw_by_lane[0][i].draw(window);
+      entities_to_draw_by_lane[0][i]->draw(window);
     }
   player->draw(window);
   window->draw(*fp2);
