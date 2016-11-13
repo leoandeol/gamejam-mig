@@ -114,3 +114,8 @@ void GameScreen::wolfRun()
       wolves[i]->run();
     }
 }
+
+Player* GameScreen::getPlayer()
+{
+  return player;
+}

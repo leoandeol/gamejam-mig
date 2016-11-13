@@ -10,14 +10,15 @@ class Animation
   
 public:
   // texture, anim duration
-  Animation(sf::Texture*,int,int,sf::Vector2f,sf::Time=sf::seconds(1)); // 1/nb image dans ligne textures
+  Animation(sf::Texture*,int,int,int,int,sf::Vector2f,bool,sf::Time=sf::seconds(1)); // 1/nb image dans ligne textures
   ~Animation();
   void update(sf::Time);
   void draw(sf::RenderWindow*);
   sf::Sprite* getCurrentAnimation();
   void setPosition(sf::Vector2f);
   void move(sf::Vector2f);
-
+  bool isOver();
+  
 private:
   sf::Sprite* sprite;
   sf::Vector2f pos;
@@ -29,6 +30,8 @@ private:
   int current_anim_y;
   int sprite_width;
   int sprite_height;
+  bool loop;
+  bool finished;
 };
 
 #endif

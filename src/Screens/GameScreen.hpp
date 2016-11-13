@@ -20,6 +20,7 @@ public:
   virtual void update(sf::Time);
   virtual void draw();
   void wolfRun();
+  Player* getPlayer();
   
 private:
   Player* player;
