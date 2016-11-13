@@ -10,7 +10,7 @@
 
 class Menu {
 public:
-  Menu(const std::string,const std::string,const std::string);
+  Menu(const std::string,const std::string,const std::string,ResourceManager*);
   ~Menu();
   void moveUp();
   void moveDown();

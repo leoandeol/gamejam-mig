@@ -2,11 +2,11 @@
 
 MenuScreen::MenuScreen(ScreenManager* man) : AbstractScreen(man)
 {
-  background.setTexture(*ResourceManager::GetTexture("data/textures/menu/background.png"));
+  background.setTexture(*manager->getRes()->GetTexture("data/textures/menu/background.png"));
   background.setPosition(sf::Vector2f(0,0));
   window = man->getWindow();
   
-  menu = new Menu("Jouer", "Options", "Quitter");
+  menu = new Menu("Jouer", "Options", "Quitter",manager->getRes());
 }
 
 MenuScreen::~MenuScreen()
@@ -23,7 +23,6 @@ void MenuScreen::update(sf::Time delta)
 	window->close();
       if(event.type==sf::Event::KeyPressed)
 	{
-	  std::cout<< "cyclle : " << delta.asMilliseconds()<<std::endl;
 	  switch(event.key.code)
 	    {
 	    case sf::Keyboard::Return:

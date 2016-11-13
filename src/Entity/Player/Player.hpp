@@ -14,7 +14,7 @@ class Player : public MovingEntity
 {
 
 public:
-  Player(int, GameScreen*);
+  Player(int, GameScreen*,ResourceManager*);
   ~Player();
   void wolfFlute();
   void bomb();

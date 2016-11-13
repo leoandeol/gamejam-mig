@@ -1,9 +1,5 @@
-#include "ResourceManager.hpp"
 
-std::map<std::string, sf::Texture*> ResourceManager::textures;
-std::map<std::string, sf::Font*> ResourceManager::fonts;
-std::map<std::string, sf::SoundBuffer*> ResourceManager::sounds;
-std::map<std::string, sf::Music*> ResourceManager::musics;
+#include "ResourceManager.hpp"
 
 sf::Texture* ResourceManager::GetTexture(const std::string path)
 {

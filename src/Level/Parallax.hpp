@@ -7,15 +7,18 @@
 class Parallax
 {
 public:
-  Parallax();
+  Parallax(ResourceManager*);
   ~Parallax();
   void update(sf::Time);
   void draw(sf::RenderWindow*);
 private:
-  sf::Sprite *background, *background2, *deep_para, *deep_para2, *close_para, *close_para2;
-  const double bg_speed = 1;
-  const double dp_speed = 1.5;
-  const double cl_speed = 2;
+  sf::Sprite *a1,*a2,*b1,*b2,*c1,*c2,*d1,*d2,*e1,*e2,*f1,*f2;
+  const double a_speed = 0.2;
+  const double b_speed = 0.4;
+  const double c_speed = 0.6;
+  const double d_speed = 0.8;
+  const double e_speed = 1.0;
+  const double f_speed = 1.2;
 };
 
 #endif

@@ -1,11 +1,11 @@
 #include "Player.hpp"
 
-Player::Player(int lane, GameScreen* gsi) : MovingEntity(lane)
+Player::Player(int lane, GameScreen* gsi,ResourceManager* res) : MovingEntity(lane,res)
 {
   /*for(int i = 0; i < 10 ;i++){
     child.push_back(new Child(lane));
     }*/
-  anim = new Animation(ResourceManager::GetTexture("data/textures/game/player.png"),11,1,sf::Vector2f(0,0),sf::milliseconds(1500));
+  anim = new Animation(res->GetTexture("data/textures/game/player.png"),11,1,sf::Vector2f(0,0),sf::milliseconds(1500));
   gs = gsi;
   nbNoteSup = 0;
 }

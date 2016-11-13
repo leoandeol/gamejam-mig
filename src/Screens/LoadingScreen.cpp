@@ -4,16 +4,29 @@ LoadingScreen::LoadingScreen(ScreenManager* man) : AbstractScreen(man)
 {
   textures_to_load.push_back("data/textures/menu/background.png");
   textures_to_load.push_back("data/textures/menu/button.png");
+  textures_to_load.push_back("data/textures/game/background/1.png");
+  textures_to_load.push_back("data/textures/game/background/2.png");
+  textures_to_load.push_back("data/textures/game/background/3.png");
+  textures_to_load.push_back("data/textures/game/background/4.png");
+  textures_to_load.push_back("data/textures/game/background/5.png");
+  textures_to_load.push_back("data/textures/game/background/6.png");
+  textures_to_load.push_back("data/textures/game/background/7.png");
+  textures_to_load.push_back("data/textures/game/background/fp1.png");
+  textures_to_load.push_back("data/textures/game/background/fp2.png");
+  textures_to_load.push_back("data/textures/game/background/aft_lan_1.png");
+  textures_to_load.push_back("data/textures/game/background/aft_lan_2.png");
+  textures_to_load.push_back("data/textures/game/background/aft_lan_3.png");
+  ResourceManager* res = manager->getRes();
+  																	 
   //todo::& play music
   percent_loaded=0;
   nb_elements_loaded = 0;
-  background.setTexture(*ResourceManager::GetTexture("data/textures/loading/background.png"));
+  background.setTexture(*res->GetTexture("data/textures/loading/background.png"));
   background.setPosition(sf::Vector2f(0,0));
-  loading_bar.setTexture(*ResourceManager::GetTexture("data/textures/loading/LoadingBar.png"));
+  loading_bar.setTexture(*res->GetTexture("data/textures/loading/LoadingBar.png"));
   loading_bar.setPosition(sf::Vector2f(100,600));
-  loading_frame.setTexture(*ResourceManager::GetTexture("data/textures/loading/LoadingFrame.png"));
+  loading_frame.setTexture(*res->GetTexture("data/textures/loading/LoadingFrame.png"));
   loading_frame.setPosition(sf::Vector2f(100,600));
-  ResourceManager::GetTexture(textures_to_load[0]);
   loading_thread = std::thread(&LoadingScreen::load_data, this);
 }
 
@@ -44,16 +57,17 @@ void LoadingScreen::draw()
 void LoadingScreen::load_data()
 {
   std::cout << "Loading " << (int)(percent_loaded*100) << "% : Loading font" << std::endl;
-  ResourceManager::GetFont("data/fonts/sevenswords.ttf");
+  ResourceManager* man = manager->getRes();
+  man->GetFont("data/fonts/sevenswords.ttf");
   nb_elements_loaded++;
-  percent_loaded = (double)nb_elements_loaded / (double)NB_ELEMENTS_TO_LOAD;
+  percent_loaded = (double)nb_elements_loaded / ((double)textures_to_load.size()+1);
   for(int i = 0; i < textures_to_load.size(); i++)
     {
       std::cout << "Loading " << (int)(percent_loaded*100) << "% : Loading texture : "<< textures_to_load[i] << std::endl;
-      std::cout << "Done loading texture : " << textures_to_load[i] <<std::endl;
+      man->GetTexture(textures_to_load[i]);
       nb_elements_loaded++;
-      percent_loaded = (double)nb_elements_loaded / (double)NB_ELEMENTS_TO_LOAD;
+      percent_loaded = (double)nb_elements_loaded / ((double)textures_to_load.size()+1);
     }
-  std::cout << "Done loading" << std::endl;
+  std::cout << "Loading 100%" << std::endl;
 }
 
