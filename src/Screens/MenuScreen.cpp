@@ -5,7 +5,8 @@ MenuScreen::MenuScreen(ScreenManager* man) : AbstractScreen(man)
   background.setTexture(*manager->getRes()->getTexture("data/textures/menu/background.png"));
   background.setPosition(sf::Vector2f(0,0));
   window = man->getWindow();
-  
+  music = manager->getRes()->getMusic("data/sounds/Musique Menu.mp3");
+  music->play();
   menu = new Menu("Jouer", "Options", "Quitter",manager->getRes());
 }
 

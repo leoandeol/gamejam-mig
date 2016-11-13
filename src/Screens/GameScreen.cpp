@@ -22,6 +22,8 @@ GameScreen::GameScreen(ScreenManager* m) : AbstractScreen(m), para(m->getRes())
   aft_lan_2->setTexture(*r->getTexture("data/textures/game/background/aft_lan_2.png"));
   aft_lan_3->setTexture(*r->getTexture("data/textures/game/background/aft_lan_3.png"));
   road->setTexture(*r->getTexture("data/textures/game/background/7.png"));
+  music = r->getMusic("data/sounds/Musique du niveau.mp3");
+  music->play();
 }
 
 GameScreen::~GameScreen()
