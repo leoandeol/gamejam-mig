@@ -7,16 +7,10 @@
 
 class Animation
 {
-  enum Direction {
-    Up,
-    Down,
-    Left,
-    Right
-  };
   
 public:
   // texture, anim duration
-  Animation(sf::Texture*, sf::Time=sf::seconds(1));
+  Animation(sf::Texture*, sf::Time=sf::seconds(1)); // 1/nb image dans ligne textures
   void update(sf::Time);
   void draw(sf::RenderWindow*);
   sf::Sprite* getCurrentAnimation();
@@ -24,8 +18,8 @@ public:
 private:
   sf::Sprite* sprite;
   sf::Vector2f pos;
-  sf::Time elapsed;
-  sf::Time tick;
+  sf::Time elapsed; //Temps passé
+  sf::Time tick; //Durée d'une image
   int nb_columns;
   int nb_rows;
   int current_anim_x;

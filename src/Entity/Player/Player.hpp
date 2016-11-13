@@ -13,10 +13,11 @@ public:
   Player(int);
   ~Player();
   void wolfFlute();
-  //void bomb();
+  void bomb();
   void enchantChildren();
   void getAttacked();
   void loseChild();
+  //void joueNote();
   std::string toString();
   int update(sf::Time delta);
 
