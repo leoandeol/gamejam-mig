@@ -5,7 +5,7 @@ EXEC = bin/main
 SOURCES=$(wildcard src/*.cpp src/*/*.cpp src/*/*/*.cpp)
 OBJECTS=$(SOURCES:.cpp=.o)
 
-default: all clean
+default: all 
 
 all: $(EXEC)
 

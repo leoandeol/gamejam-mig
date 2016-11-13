@@ -10,7 +10,6 @@ Button::Button(std::string te, sf::IntRect r)
   int x = hitbox.left + ((hitbox.width-text.getGlobalBounds().width)/2);
   int y = hitbox.top + ((hitbox.height-text.getGlobalBounds().height)/2);
   text.setPosition(x,y);
-  std::cout << hitbox.left << ";" << hitbox.top << ";" << hitbox.width << ";" << hitbox.height << std::endl;
 }
 
 Button::~Button()
