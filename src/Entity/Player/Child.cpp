@@ -2,24 +2,24 @@
 
 Child::Child(int lane) : MovingEntity(lane)
 {
-  c_sex = (bool) rand()%2;
-  c_enchanted = true;
-  c_moveSpeed = 1.0;
+  sex = (bool) rand()%2;
+  enchanted = true;
+  moveSpeed = 1.0;
 }
 
 void Child::setEnchanted()
 {
-  c_enchanted = true;
+  enchanted = true;
 }
 
 void Child::setDesenchanted()
 {
-  c_enchanted = false;
+  enchanted = false;
 }
 
 bool Child::getSex()
 {
-  return &c_sex;
+  return &sex;
 }
 
 void Child::kill()

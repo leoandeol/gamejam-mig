@@ -7,6 +7,7 @@ class Wolf : public Enemy
   
 public :
   void attack();
+  void run();
   
 private :
   
