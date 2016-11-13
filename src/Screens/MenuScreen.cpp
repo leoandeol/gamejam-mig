@@ -7,8 +7,6 @@ MenuScreen::MenuScreen(ScreenManager* man) : AbstractScreen(man)
   window = man->getWindow();
   //manager->push_screen(new GameScreen(manager));
 
-
-  std::vector<std::string> s;
   s.push_back(std::string("Jouer"));
   s.push_back(std::string("Options"));
   s.push_back(std::string("Quitter"));

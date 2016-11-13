@@ -18,7 +18,7 @@ public:
   void draw(sf::RenderWindow*);
   
 private:
-  std::vector<sf::Text*> strings;
+  std::vector<std::string> strings;
   int current;
   int length;
 };

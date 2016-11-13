@@ -20,6 +20,7 @@ public:
   virtual void update(sf::Time);
   virtual void draw();
   void wolfRun();
+  
 private:
   Player* player;
   std::vector<Wolf*> wolves;

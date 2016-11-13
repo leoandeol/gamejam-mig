@@ -16,9 +16,9 @@ public:
   virtual void update(sf::Time);
   virtual void draw();
 private:
-  Menu* menu;;
+  Menu* menu;
   sf::Sprite background;
-  std::list<std::string> strings;
+  std::vector<std::string> s;
 };
 
 #endif

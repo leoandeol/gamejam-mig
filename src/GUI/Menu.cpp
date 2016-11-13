@@ -6,10 +6,9 @@ Menu::Menu(std::vector<std::string> v)
   const int x = 900;
   int y = 200;
   current = 0;
-  length = v.max_size();
-  
+  length = v.size();
   for(int i = 0; i < length; i++)
-    {
+    {      
       strings[i]=new sf::Text();
       strings[i]->setString(v.at(i));
       strings[i]->setPosition(x,y);
