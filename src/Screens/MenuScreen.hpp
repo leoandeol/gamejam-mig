@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "../Managers/ScreenManager.hpp"
 #include "../Managers/ResourceManager.hpp"
 #include "GameScreen.hpp"
@@ -17,6 +18,7 @@ public:
   virtual void draw();
 private:
   Menu* menu;
+  sf::Music* music;
   sf::Sprite background;
   std::vector<std::string*> s;
 };
