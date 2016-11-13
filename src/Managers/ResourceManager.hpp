@@ -10,15 +10,16 @@
 class ResourceManager
 {
 public:
-  sf::Texture* GetTexture(std::string);
-  sf::Font* GetFont(std::string);
-  sf::SoundBuffer* GetSoundBuffer(std::string);
-  sf::Music* GetMusic(std::string);
+  ResourceManager();
+  sf::Texture* GetTexture(const char*);
+  sf::Font* GetFont(const char*);
+  sf::SoundBuffer* GetSoundBuffer(const char*);
+  sf::Music* GetMusic(const char*);
 private:
-  std::map<std::string, sf::Texture*> textures;
-  std::map<std::string, sf::Font*> fonts;
-  std::map<std::string, sf::SoundBuffer*> sounds;
-  std::map<std::string, sf::Music*> musics;
+  std::map<const char*, sf::Texture*> textures;
+  std::map<const char*, sf::Font*> fonts;
+  std::map<const char*, sf::SoundBuffer*> sounds;
+  std::map<const char*, sf::Music*> musics;
 };
 
 #endif

@@ -2,6 +2,7 @@
 
 LoadingScreen::LoadingScreen(ScreenManager* man) : AbstractScreen(man)
 {
+  std::cout << "Entering loading screen" << std::endl;
   textures_to_load.push_back("data/textures/menu/background.png");
   textures_to_load.push_back("data/textures/menu/button.png");
   textures_to_load.push_back("data/textures/game/background/1.png");
@@ -17,15 +18,18 @@ LoadingScreen::LoadingScreen(ScreenManager* man) : AbstractScreen(man)
   textures_to_load.push_back("data/textures/game/background/aft_lan_2.png");
   textures_to_load.push_back("data/textures/game/background/aft_lan_3.png");
   ResourceManager* res = manager->getRes();
-  																	 
+  																 
   //todo::& play music
   percent_loaded=0;
   nb_elements_loaded = 0;
-  background.setTexture(*res->GetTexture("data/textures/loading/background.png"));
+  char* s = "data/textures/loading/background.png";
+  std::cout << "Entering loading screeaaaaaaaan" << std::endl;
+  background.setTexture(*(res->GetTexture(s)));	
+  std::cout << "Entering loading screeaaaaaaaan" << std::endl;
   background.setPosition(sf::Vector2f(0,0));
-  loading_bar.setTexture(*res->GetTexture("data/textures/loading/LoadingBar.png"));
+  loading_bar.setTexture(*(res->GetTexture("data/textures/loading/LoadingBar.png")));
   loading_bar.setPosition(sf::Vector2f(100,600));
-  loading_frame.setTexture(*res->GetTexture("data/textures/loading/LoadingFrame.png"));
+  loading_frame.setTexture(*(res->GetTexture("data/textures/loading/LoadingFrame.png")));
   loading_frame.setPosition(sf::Vector2f(100,600));
   loading_thread = std::thread(&LoadingScreen::load_data, this);
 }

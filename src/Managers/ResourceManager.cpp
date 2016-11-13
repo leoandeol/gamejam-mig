@@ -1,8 +1,14 @@
 
 #include "ResourceManager.hpp"
 
-sf::Texture* ResourceManager::GetTexture(const std::string path)
+ResourceManager::ResourceManager() : textures(), fonts(), sounds(), musics()
 {
+}
+
+sf::Texture* ResourceManager::GetTexture(const char* path)
+{
+  textures.find(path);
+  std::cout << "yo"<<std::endl;
   if (textures.find(path) == textures.end())
     {
       sf::Texture* texture = new sf::Texture();
@@ -15,7 +21,7 @@ sf::Texture* ResourceManager::GetTexture(const std::string path)
   return textures[path];
 }
 
-sf::Font* ResourceManager::GetFont(const std::string path)
+sf::Font* ResourceManager::GetFont(const char* path)
 {
   if (fonts.find(path) == fonts.end())
     {
@@ -29,7 +35,7 @@ sf::Font* ResourceManager::GetFont(const std::string path)
   return fonts[path];
 }
 
-sf::SoundBuffer* ResourceManager::GetSoundBuffer(const std::string path)
+sf::SoundBuffer* ResourceManager::GetSoundBuffer(const char* path)
 {
   if (sounds.find(path) == sounds.end())
     {
@@ -43,7 +49,7 @@ sf::SoundBuffer* ResourceManager::GetSoundBuffer(const std::string path)
   return sounds[path];
 }
 
-sf::Music* ResourceManager::GetMusic(const std::string path)
+sf::Music* ResourceManager::GetMusic(const char* path)
 {
   if (musics.find(path) == musics.end())
     {

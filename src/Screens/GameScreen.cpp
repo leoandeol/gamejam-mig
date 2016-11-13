@@ -4,7 +4,7 @@ GameScreen::GameScreen(ScreenManager* m) : AbstractScreen(m), para(m->getRes())
 {
   ResourceManager* r = m->getRes();
   window = manager->getWindow();
-  player = new Player(2,this);
+  player = new Player(2,this,r);
   fp1 = new sf::Sprite();
   fp2 = new sf::Sprite();
   aft_lan_1 = new sf::Sprite();
@@ -63,7 +63,7 @@ void GameScreen::draw()
 {
   para.draw(window);
   player->draw(window);
-  w->draw(*road);
+  window->draw(*road);
   for(int i = 0; i < wolves.size(); i++)
     {
       wolves[i]->draw(window);
@@ -72,8 +72,8 @@ void GameScreen::draw()
     {
       parents[i]->draw(window);
     }
-  w->draw(*fp2);
-  w->draw(*fp1);
+  window->draw(*fp2);
+  window->draw(*fp1);
 }
 
 void GameScreen::wolfRun()

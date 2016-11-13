@@ -7,7 +7,7 @@
 int main()
 {
   srand(time(NULL)); // Setting random seed
-  sf::RenderWindow window(sf::VideoMode(1280, 720, 32), "A type pursuer",sf::Style::Fullscreen);
+  sf::RenderWindow window(sf::VideoMode(1280, 720, 32), "A type pursuer");
   ScreenManager sc(&window);
   sc.push_screen(new LoadingScreen(&sc));
   sf::Clock delta;

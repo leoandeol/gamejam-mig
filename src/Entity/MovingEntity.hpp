@@ -16,7 +16,7 @@ public:
   void moveDown();
   void draw(sf::RenderWindow* w);
 
-private:
+protected:
   double moveSpeed;
   Animation* anim;
 
