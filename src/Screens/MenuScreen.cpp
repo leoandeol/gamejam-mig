@@ -5,13 +5,8 @@ MenuScreen::MenuScreen(ScreenManager* man) : AbstractScreen(man)
   background.setTexture(*ResourceManager::GetTexture("data/textures/menu/background.png"));
   background.setPosition(sf::Vector2f(0,0));
   window = man->getWindow();
-  //manager->push_screen(new GameScreen(manager));
-
-  s.push_back(std::string("Jouer"));
-  s.push_back(std::string("Options"));
-  s.push_back(std::string("Quitter"));
   
-  menu = new Menu(s);
+  menu = new Menu("Jouer", "Options", "Quitter");
 }
 
 MenuScreen::~MenuScreen()
@@ -24,10 +19,16 @@ void MenuScreen::update(sf::Time delta)
   sf::Event event;
   while(window->pollEvent(event))
     {
+      if (event.type == sf::Event::Closed||(event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape))
+	window->close();
       if(event.type==sf::Event::KeyPressed)
 	{
+	  std::cout<< "cyclle : " << delta.asMilliseconds()<<std::endl;
 	  switch(event.key.code)
 	    {
+	    case sf::Keyboard::Return:
+	      manager->push_screen(new GameScreen(manager));
+	      break;
 	    case sf::Keyboard::Up:
 	      menu->moveUp();
 	      break;

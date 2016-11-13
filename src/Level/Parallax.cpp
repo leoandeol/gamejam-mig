@@ -2,6 +2,12 @@
 
 Parallax::Parallax()
 {
+  background = new sf::Sprite();
+  background2 = new sf::Sprite();
+  deep_para = new sf::Sprite();
+  deep_para2 = new sf::Sprite();
+  close_para = new sf::Sprite();
+  close_para2 = new sf::Sprite();
   background->setTexture(*ResourceManager::GetTexture("data/textures/game/background.png"));
   background2->setTexture(*ResourceManager::GetTexture("data/textures/game/background.png"));
   deep_para->setTexture(*ResourceManager::GetTexture("data/textures/game/deep_para.png"));

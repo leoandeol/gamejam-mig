@@ -13,9 +13,9 @@ public:
   void draw(sf::RenderWindow*);
 private:
   sf::Sprite *background, *background2, *deep_para, *deep_para2, *close_para, *close_para2;
-  const double bg_speed = 10;
-  const double dp_speed = 15;
-  const double cl_speed = 20;
+  const double bg_speed = 1;
+  const double dp_speed = 1.5;
+  const double cl_speed = 2;
 };
 
 #endif

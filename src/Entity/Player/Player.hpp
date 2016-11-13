@@ -6,6 +6,7 @@
 #include "../MovingEntity.hpp"
 #include "Note.hpp"
 #include "../../Screens/GameScreen.hpp"
+#include "../../Managers/ResourceManager.hpp"
 
 class GameScreen;
 
