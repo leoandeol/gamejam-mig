@@ -7,6 +7,8 @@
 #include "Note.hpp"
 #include "../../Screens/GameScreen.hpp"
 
+class GameScreen;
+
 class Player : public MovingEntity
 {
 
