@@ -7,7 +7,7 @@ class Enemy : public MovingEntity
 {
   
 public:
-  Enemy(int, int);
+  Enemy(int, int, ResourceManager*);
   void attack();
   void run();
   

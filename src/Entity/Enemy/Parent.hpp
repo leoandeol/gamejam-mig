@@ -7,7 +7,7 @@ class Parent : public Enemy
 {
 
 public:
-  Parent(int, int);
+  Parent(int, int, ResourceManager*);
   void attack();
   
 private:

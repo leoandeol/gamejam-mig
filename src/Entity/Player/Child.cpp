@@ -1,6 +1,6 @@
 #include "Child.hpp"
 
-Child::Child(int lane) : MovingEntity(lane)
+Child::Child(int lane, ResourceManager* m) : MovingEntity(lane, m)
 {
   sex = (bool) rand()%2;
   enchanted = true;

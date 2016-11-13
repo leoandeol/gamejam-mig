@@ -1,6 +1,6 @@
 #include "Enemy.hpp"
 
-Enemy::Enemy(int lane, int hp) : MovingEntity(lane)
+Enemy::Enemy(int lane, int hp, ResourceManager* rm) : MovingEntity(lane, rm)
 {
   hp = hp;
 }

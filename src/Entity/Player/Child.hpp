@@ -7,7 +7,7 @@ class Child : public MovingEntity
 {
 
 public:
-  Child(int);
+  Child(int, ResourceManager*);
   void setEnchant(bool);
   bool getSex();
   void kill();

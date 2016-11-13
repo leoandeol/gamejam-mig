@@ -29,3 +29,7 @@ void MovingEntity::moveDown()
   }
 }
 
+void MovingEntity::draw(sf::RenderWindow*)
+{
+}
+

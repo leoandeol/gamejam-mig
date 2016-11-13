@@ -1,8 +1,8 @@
 #ifndef DEF_MUR
 #define DEF_MUR
-#include "Entite.hpp"
+#include "nonMovingEntity.hpp"
 
-class Mur : public Entite
+class Mur : public nonMovingEntity
 {
 public:
   
