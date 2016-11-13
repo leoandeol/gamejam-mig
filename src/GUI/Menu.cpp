@@ -2,7 +2,7 @@
 
 Menu::Menu(const std::string a, const std::string b, const std::string c,ResourceManager* man)
 {
-  sf::Font* font = man->GetFont("data/fonts/sevenswords.ttf");
+  sf::Font* font = man->getFont("data/fonts/sevenswords.ttf");
   const int x = 1000;
   int y = 200;
   current = 0;

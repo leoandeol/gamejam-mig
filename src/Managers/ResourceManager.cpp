@@ -1,27 +1,28 @@
-
 #include "ResourceManager.hpp"
 
 ResourceManager::ResourceManager() : textures(), fonts(), sounds(), musics()
 {
+  textures.clear();
+  fonts.clear();
+  sounds.clear();
+  musics.clear();
 }
 
-sf::Texture* ResourceManager::GetTexture(const char* path)
+sf::Texture* ResourceManager::getTexture(const std::string& path)
 {
-  textures.find(path);
-  std::cout << "yo"<<std::endl;
-  if (textures.find(path) == textures.end())
+  if (textures.find(path)==textures.end())
     {
       sf::Texture* texture = new sf::Texture();
       if(!texture->loadFromFile(path))
 	{
 	  std::cout << "Error loading file : " << path << std::endl;
 	}
-      textures[path] = texture;
+      textures[path]=texture;
     }
   return textures[path];
 }
 
-sf::Font* ResourceManager::GetFont(const char* path)
+sf::Font* ResourceManager::getFont(const std::string& path)
 {
   if (fonts.find(path) == fonts.end())
     {
@@ -35,7 +36,7 @@ sf::Font* ResourceManager::GetFont(const char* path)
   return fonts[path];
 }
 
-sf::SoundBuffer* ResourceManager::GetSoundBuffer(const char* path)
+sf::SoundBuffer* ResourceManager::getSound(const std::string& path)
 {
   if (sounds.find(path) == sounds.end())
     {
@@ -49,7 +50,7 @@ sf::SoundBuffer* ResourceManager::GetSoundBuffer(const char* path)
   return sounds[path];
 }
 
-sf::Music* ResourceManager::GetMusic(const char* path)
+sf::Music* ResourceManager::getMusic(const std::string& path)
 {
   if (musics.find(path) == musics.end())
     {

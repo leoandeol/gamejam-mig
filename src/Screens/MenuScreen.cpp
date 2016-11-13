@@ -2,7 +2,7 @@
 
 MenuScreen::MenuScreen(ScreenManager* man) : AbstractScreen(man)
 {
-  background.setTexture(*manager->getRes()->GetTexture("data/textures/menu/background.png"));
+  background.setTexture(*manager->getRes()->getTexture("data/textures/menu/background.png"));
   background.setPosition(sf::Vector2f(0,0));
   window = man->getWindow();
   
