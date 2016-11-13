@@ -7,8 +7,14 @@ Entity::Entity(int l, ResourceManager* r)
   //COORDONNEES A FAIRE 
 }
 
+int Entity::getLane()
+{
+  return lane;
+}
+
 Entity::~Entity()
 {
+  
 }
 
 

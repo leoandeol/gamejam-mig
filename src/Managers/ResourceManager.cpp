@@ -7,8 +7,7 @@ ResourceManager::ResourceManager() : textures(), fonts(), sounds(), musics()
 
 sf::Texture* ResourceManager::GetTexture(const char* path)
 {
-  textures.find(path);
-  std::cout << "yo"<<std::endl;
+  std::cout << "yo1" << std::endl;
   if (textures.find(path) == textures.end())
     {
       sf::Texture* texture = new sf::Texture();

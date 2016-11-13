@@ -11,9 +11,7 @@ int main()
   ScreenManager sc(&window);
   sc.push_screen(new LoadingScreen(&sc));
   sf::Clock delta;
-  
-  while (window.isOpen())
-    { 
+  {
       window.clear();
       sc.update(delta.restart());
       sc.draw();

@@ -9,7 +9,7 @@ public:
   Entity(int, ResourceManager*); 
   ~Entity();
   virtual int update(sf::Time)=0;
-  void draw(sf::RenderWindow*);
+  virtual void draw(sf::RenderWindow*)=0;
   
 protected:
   ResourceManager* rm;

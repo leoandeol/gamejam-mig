@@ -7,12 +7,12 @@ MovingEntity::MovingEntity(int lane, ResourceManager* rm) : Entity(lane, rm)
 
 void MovingEntity::acceleration()
 {
-  if(moveSpeed <= 2.5) moveSpeed += 0.5;
+  if(moveSpeed <= 2) moveSpeed += 0.5;
 }
 
 void MovingEntity::slowDown()
 {
-  if(moveSpeed >= 0.5) moveSpeed -= 0.5;
+  if(moveSpeed >= 1) moveSpeed -= 0.5;
 }
 
 void MovingEntity::moveUp()
@@ -29,7 +29,8 @@ void MovingEntity::moveDown()
   }
 }
 
-void MovingEntity::draw(sf::RenderWindow*)
+void MovingEntity::Entity()
 {
+  w->draw(anim*);
 }
 

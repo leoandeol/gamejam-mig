@@ -8,7 +8,8 @@ class nonMovingEntity : Entity
 {
 public:
   void draw(sf::RenderWindow*);
-
+private:
+  sf::Sprite* s;
 
 };
 

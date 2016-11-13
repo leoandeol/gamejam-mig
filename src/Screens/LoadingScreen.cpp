@@ -22,10 +22,10 @@ LoadingScreen::LoadingScreen(ScreenManager* man) : AbstractScreen(man)
   //todo::& play music
   percent_loaded=0;
   nb_elements_loaded = 0;
-  char* s = "data/textures/loading/background.png";
+  char* s = "data/textures/game/background/1.png";
   std::cout << "Entering loading screeaaaaaaaan" << std::endl;
-  background.setTexture(*(res->GetTexture(s)));	
-  std::cout << "Entering loading screeaaaaaaaan" << std::endl;
+  background.setTexture(*(res->GetTexture(s)));
+  std::cout << "Entering loading screeaaaaaaaan1" << std::endl;
   background.setPosition(sf::Vector2f(0,0));
   loading_bar.setTexture(*(res->GetTexture("data/textures/loading/LoadingBar.png")));
   loading_bar.setPosition(sf::Vector2f(100,600));

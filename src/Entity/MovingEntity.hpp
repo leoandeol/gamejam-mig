@@ -14,7 +14,7 @@ public:
   void slowDown();
   void moveUp();
   void moveDown();
-  void draw(sf::RenderWindow* w);
+  virtual void draw(sf::RenderWindow* w);
 
 protected:
   double moveSpeed;
