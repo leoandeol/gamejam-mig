@@ -8,8 +8,7 @@ class Child : public MovingEntity
 
 public:
   Child(int);
-  void setEnchanted();
-  void setDesenchanted();
+  void setEnchant(bool);
   bool getSex();
   void kill();
   int update(sf::Time);

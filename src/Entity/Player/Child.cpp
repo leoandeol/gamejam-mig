@@ -7,14 +7,9 @@ Child::Child(int lane) : MovingEntity(lane)
   moveSpeed = 1.0;
 }
 
-void Child::setEnchanted()
+void Child::setEnchant(bool ench)
 {
-  enchanted = true;
-}
-
-void Child::setDesenchanted()
-{
-  enchanted = false;
+  enchanted = ench;
 }
 
 bool Child::getSex()
@@ -24,13 +19,10 @@ bool Child::getSex()
 
 void Child::kill()
 {
+  //Call animations death
 }
 
 int Child::update(sf::Time delta)
 {
   return 0;
 }
-
-//FAIRE METHODE DESENCHANTE
-//JOUER TROP FAUX
-//JOUER PAS ASSEZ FORT

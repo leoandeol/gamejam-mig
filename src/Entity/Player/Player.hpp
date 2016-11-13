@@ -15,16 +15,16 @@ public:
   ~Player();
   void wolfFlute();
   void bomb();
-  void enchantChildren();
+  void enchantChildren(Child);
   void getAttacked();
   void loseChild();
   void joueNote(Note);
-  std::string toString();
   int update(sf::Time delta);
 
 private:
   std::vector<Child*> child;
   GameScreen* gs;
+  int nbNoteSup;
 };
 
 
