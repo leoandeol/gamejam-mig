@@ -12,6 +12,7 @@ Entity::~Entity()
 
 void Entity::draw(sf::RenderWindow* w)
 {
+  anim->draw(w);
 }
 
 

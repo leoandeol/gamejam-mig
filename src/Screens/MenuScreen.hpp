@@ -18,7 +18,7 @@ public:
 private:
   Menu* menu;
   sf::Sprite background;
-  std::vector<std::string> s;
+  std::vector<std::string*> s;
 };
 
 #endif

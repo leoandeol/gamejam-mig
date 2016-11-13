@@ -6,6 +6,7 @@
 #include "../MovingEntity.hpp"
 #include "Note.hpp"
 #include "../../Screens/GameScreen.hpp"
+#include "../../Managers/ResourceManager.hpp"
 
 class GameScreen;
 
@@ -13,7 +14,7 @@ class Player : public MovingEntity
 {
 
 public:
-  Player(int, GameScreen*);
+  Player(int, GameScreen*,ResourceManager*);
   ~Player();
   void wolfFlute();
   void bomb();

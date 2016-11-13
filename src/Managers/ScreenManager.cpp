@@ -1,8 +1,8 @@
 #include "ScreenManager.hpp"
 
-ScreenManager::ScreenManager(sf::RenderWindow* w)
+ScreenManager::ScreenManager(sf::RenderWindow* w) : window(w), res()
 {
-  window = w;
+  
 }
 
 ScreenManager::~ScreenManager()
@@ -13,6 +13,11 @@ ScreenManager::~ScreenManager()
 sf::RenderWindow* ScreenManager::getWindow()
 {
   return window;
+}
+
+ResourceManager* ScreenManager::getRes()
+{
+  return res;
 }
 
 void ScreenManager::update(sf::Time delta)

@@ -10,7 +10,7 @@
 
 class Menu {
 public:
-  Menu(std::vector<std::string>);
+  Menu(const std::string,const std::string,const std::string,ResourceManager*);
   ~Menu();
   void moveUp();
   void moveDown();
@@ -18,7 +18,8 @@ public:
   void draw(sf::RenderWindow*);
   
 private:
-  std::vector<std::string> strings;
+  sf::Text** strings;
+  sf::CircleShape shape;
   int current;
   int length;
 };

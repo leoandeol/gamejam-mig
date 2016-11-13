@@ -3,7 +3,7 @@
 #include "Enemy.hpp"
 #include <cstdlib>
 
-class Parent : Enemy
+class Parent : public Enemy
 {
 
 public:
