@@ -7,7 +7,7 @@ MovingEntity::MovingEntity(int lane) : Entity(lane)
 
 void MovingEntity::acceleration()
 {
-  if(moveSpeed <= 9.5) moveSpeed += 0.5;
+  if(moveSpeed <= 2.5) moveSpeed += 0.5;
 }
 
 void MovingEntity::slowDown()
