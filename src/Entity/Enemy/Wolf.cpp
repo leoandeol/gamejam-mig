@@ -1,8 +1,11 @@
 #include "Wolf.hpp"
 
-/*Wolf::attack(Player player)
+void Wolf::attack()
 {
   player.getAttacked();
-  this.run()
-  delete this;
-}*/
+  run()
+}
+
+void Wolf::run()
+{
+}

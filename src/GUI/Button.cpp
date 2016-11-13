@@ -1,7 +1,8 @@
 #include "Button.hpp"
 
-Button::Button(std::string te, sf::IntRect r) : hitbox(r)
+Button::Button(std::string te, sf::IntRect r)
 {
+  hitbox = r;
   sprite.setTexture(*ResourceManager::GetTexture("data/textures/menu/button.png"));
   text.setString(te);
   text.setFont(*ResourceManager::GetFont("data/fonts/sevenswords.ttf"));
@@ -9,11 +10,17 @@ Button::Button(std::string te, sf::IntRect r) : hitbox(r)
   int x = hitbox.left + ((hitbox.width-text.getGlobalBounds().width)/2);
   int y = hitbox.top + ((hitbox.height-text.getGlobalBounds().height)/2);
   text.setPosition(x,y);
+  std::cout << hitbox.left << ";" << hitbox.top << ";" << hitbox.width << ";" << hitbox.height << std::endl;
 }
 
 Button::~Button()
 {
   
+}
+
+bool Button::contains(sf::Vector2i v)
+{
+  return hitbox.contains(v);
 }
 
 sf::IntRect Button::getHitbox()

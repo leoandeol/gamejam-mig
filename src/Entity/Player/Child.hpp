@@ -15,9 +15,9 @@ public:
   int update(sf::Time);
   
 private:
-  double c_moveSpeed;
-  bool c_sex;
-  bool c_enchanted;
+  double moveSpeed;
+  bool sex;
+  bool enchanted;
 };
 
 #endif

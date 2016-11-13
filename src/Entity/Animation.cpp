@@ -1,5 +1,5 @@
 #include "Animation.hpp"
-
+/*
 Animation::Animation(sf::Texture* t, sf::Time time, int nbColumns, int nbRows, float x, float y) : pos(x,y)
 {
   sprite.setTexture(*t);
@@ -19,5 +19,5 @@ void update(sf::Time)
 void draw(sf::RenderWindow*)
 {
   
-}
+}*/
 
