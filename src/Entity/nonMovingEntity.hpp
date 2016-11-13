@@ -10,6 +10,6 @@ public:
   void draw(sf::RenderWindow*);
 
 
-}
+};
 
 #endif

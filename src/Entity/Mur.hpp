@@ -4,12 +4,10 @@
 #include <SFML/Graphics.hpp>
 
 class Mur : public nonMovingEntity
-{
+{  
 public:
-  
-private:
-  int update(sf::time delta);
-  void draw(sf::RenderWindow* w);
-}
+  int update(sf::Time);
+  void draw(sf::RenderWindow*);
+};
   
 #endif
