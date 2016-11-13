@@ -29,7 +29,7 @@ void MovingEntity::moveDown()
   }
 }
 
-void MovingEntity::Entity()
+void MovingEntity::MovingEntity()
 {
   w->draw(anim*);
 }
