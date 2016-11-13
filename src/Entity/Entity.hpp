@@ -1,6 +1,7 @@
 #ifndef DEF_ENTITY
 #define DEF_ENTITY
 #include <SFML/Graphics.hpp>
+#include "../Managers/ResourceManager.hpp"
 
 class Entity{
 

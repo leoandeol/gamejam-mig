@@ -1,6 +1,6 @@
 #include "MovingEntity.hpp"
 
-MovingEntity::MovingEntity(int lane, ResourceManager* RM) : Entity(lane, ResourceManager*)
+MovingEntity::MovingEntity(int lane, ResourceManager* rm) : Entity(lane, rm)
 {
   moveSpeed = 1.0;
 }
